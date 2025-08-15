@@ -1,8 +1,6 @@
 const User = require('../models/User');
 
-// @desc    Get current logged in user
-// @route   GET /api/users/me
-// @access  Private
+
 exports.getMe = async (req, res, next) => {
   try {
     const user = await User.findById(req.user.id);
