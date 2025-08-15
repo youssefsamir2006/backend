@@ -1,8 +1,6 @@
 const Car = require('../models/Car');
 
-// @desc    Create a car
-// @route   POST /api/cars
-// @access  Public
+
 exports.createCar = async (req, res, next) => {
   try {
     const car = await Car.create(req.body);
@@ -15,9 +13,7 @@ exports.createCar = async (req, res, next) => {
   }
 };
 
-// @desc    Get all cars
-// @route   GET /api/cars
-// @access  Public
+
 exports.getCars = async (req, res, next) => {
   try {
     const cars = await Car.find();
@@ -31,9 +27,7 @@ exports.getCars = async (req, res, next) => {
   }
 };
 
-// @desc    Get single car
-// @route   GET /api/cars/:id
-// @access  Public
+
 exports.getCarById = async (req, res, next) => {
   try {
     const car = await Car.findById(req.params.id);
@@ -51,9 +45,6 @@ exports.getCarById = async (req, res, next) => {
   }
 };
 
-// @desc    Update car
-// @route   PATCH /api/cars/:id
-// @access  Public
 exports.updateCar = async (req, res, next) => {
   try {
     const car = await Car.findByIdAndUpdate(req.params.id, req.body, {
@@ -74,9 +65,6 @@ exports.updateCar = async (req, res, next) => {
   }
 };
 
-// @desc    Delete car
-// @route   DELETE /api/cars/:id
-// @access  Public
 exports.deleteCar = async (req, res, next) => {
   try {
     const car = await Car.findByIdAndDelete(req.params.id);
